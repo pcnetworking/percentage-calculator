@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Percentage Calculator</title>
+  <style>
+    body { font-family: Arial; padding: 20px; max-width: 300px; margin: auto; }
+    input, button { width: 100%; margin: 5px 0; padding: 8px; }
+  </style>
+</head>
+<body>
+  <h2>Percentage Calculator</h2>
+  <input id="amount" type="number" placeholder="Enter amount">
+  <input id="percent" type="number" placeholder="Enter percentage">
+  <button onclick="calculate()">Calculate</button>
+  <h3 id="result">Result: </h3>
+
+  <script>
+    function calculate() {
+      const amount = parseFloat(document.getElementById('amount').value);
+      const percent = parseFloat(document.getElementById('percent').value);
+      if (!isNaN(amount) && !isNaN(percent)) {
+        const result = (amount * percent) / 100;
+        document.getElementById('result').innerText = `Result: ${result}`;
+      } else {
+        alert("Please enter valid numbers.");
+      }
+    }
+  </script>
+</body>
+</html>
